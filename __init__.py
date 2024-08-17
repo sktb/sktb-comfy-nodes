@@ -1,0 +1,11 @@
+from .SKTBMegaBus import SKTBMegaBus
+
+NODE_CLASS_MAPPINGS = {
+    "SKTBMegaBus": SKTBMegaBus
+}
+
+NODE_DISPLAY_NAMES_MAPPINGS = {
+    "SKTBMegaBus": "SKTB - Mega Bus"
+}
+
+__all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
