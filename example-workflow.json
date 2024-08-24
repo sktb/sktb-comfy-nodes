@@ -1,0 +1,3394 @@
+{
+  "last_node_id": 225,
+  "last_link_id": 601,
+  "nodes": [
+    {
+      "id": 80,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        1900,
+        180
+      ],
+      "size": {
+        "0": 320,
+        "1": 60
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [
+            532
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "4xUltrasharp_4xUltrasharpV10.pt"
+      ]
+    },
+    {
+      "id": 211,
+      "type": "CR Image Panel",
+      "pos": [
+        1160,
+        200
+      ],
+      "size": {
+        "0": 320,
+        "1": 240
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image_1",
+          "type": "IMAGE",
+          "link": 527
+        },
+        {
+          "name": "image_2",
+          "type": "IMAGE",
+          "link": 526
+        },
+        {
+          "name": "image_3",
+          "type": "IMAGE",
+          "link": 525
+        },
+        {
+          "name": "image_4",
+          "type": "IMAGE",
+          "link": 528
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            529
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR Image Panel"
+      },
+      "widgets_values": [
+        1,
+        "custom",
+        1,
+        "white",
+        "horizontal",
+        "#000000"
+      ]
+    },
+    {
+      "id": 89,
+      "type": "UltralyticsDetectorProvider",
+      "pos": [
+        970,
+        110
+      ],
+      "size": {
+        "0": 320,
+        "1": 80
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "BBOX_DETECTOR",
+          "type": "BBOX_DETECTOR",
+          "links": [
+            181
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "SEGM_DETECTOR",
+          "type": "SEGM_DETECTOR",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UltralyticsDetectorProvider"
+      },
+      "widgets_values": [
+        "bbox/face_yolov8m.pt"
+      ]
+    },
+    {
+      "id": 93,
+      "type": "SaveImage",
+      "pos": [
+        2530,
+        -10
+      ],
+      "size": {
+        "0": 930,
+        "1": 1020
+      },
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 601
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 212,
+      "type": "PreviewImage",
+      "pos": [
+        980,
+        170
+      ],
+      "size": {
+        "0": 590,
+        "1": 400
+      },
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 529
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 204,
+      "type": "PreviewImage",
+      "pos": [
+        590,
+        350
+      ],
+      "size": {
+        "0": 210,
+        "1": 250
+      },
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 513
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 115,
+      "type": "CR Prompt Text",
+      "pos": [
+        -1020,
+        110
+      ],
+      "size": {
+        "0": 400,
+        "1": 140
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            552
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "Positive Prompt",
+      "properties": {
+        "Node name for S&R": "CR Prompt Text"
+      },
+      "widgets_values": [
+        "goth woman standing with hip dipped, dark clothing, dramatic, cinematic shot, great lighting, raw photo, film grain, Fujifilm XT3, (photorealistic, realistic:1.2), deep shadow,  8k, uhd, dslr, ultra high res, side view, norse viking woman"
+      ]
+    },
+    {
+      "id": 116,
+      "type": "CR Prompt Text",
+      "pos": [
+        -1020,
+        170
+      ],
+      "size": {
+        "0": 390,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            553
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "Negative Prompt",
+      "properties": {
+        "Node name for S&R": "CR Prompt Text"
+      },
+      "widgets_values": [
+        "cartoon, painting, illustration, (worst quality, low quality, normal quality:1.2), child, young"
+      ]
+    },
+    {
+      "id": 106,
+      "type": "CR Seed",
+      "pos": [
+        -1020,
+        230
+      ],
+      "size": {
+        "0": 320,
+        "1": 100
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            559
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR Seed"
+      },
+      "widgets_values": [
+        599917597651624,
+        "randomize"
+      ]
+    },
+    {
+      "id": 129,
+      "type": "KSampler Config (rgthree)",
+      "pos": [
+        -1030,
+        290
+      ],
+      "size": {
+        "0": 320,
+        "1": 230
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STEPS",
+          "type": "INT",
+          "links": [
+            554
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "REFINER_STEP",
+          "type": "INT",
+          "links": [
+            555
+          ],
+          "slot_index": 1,
+          "shape": 3
+        },
+        {
+          "name": "CFG",
+          "type": "FLOAT",
+          "links": [
+            556
+          ],
+          "slot_index": 2,
+          "shape": 3
+        },
+        {
+          "name": "SAMPLER",
+          "type": "COMBO",
+          "links": [
+            557
+          ],
+          "slot_index": 3,
+          "shape": 3
+        },
+        {
+          "name": "SCHEDULER",
+          "type": "COMBO",
+          "links": [
+            558
+          ],
+          "slot_index": 4,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler Config (rgthree)"
+      },
+      "widgets_values": [
+        10,
+        1000,
+        7,
+        "dpmpp_sde",
+        "karras"
+      ]
+    },
+    {
+      "id": 216,
+      "type": "SKTBModelBus",
+      "pos": [
+        -760,
+        -110
+      ],
+      "size": [
+        320,
+        400
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model_bus",
+          "type": "MODEL_BUS",
+          "link": 551
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 546
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 547
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": null
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "height"
+          }
+        },
+        {
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "ckpt_name"
+          }
+        },
+        {
+          "name": "sampler",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "sampler"
+          }
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "scheduler"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_bus",
+          "type": "MODEL_BUS",
+          "links": [
+            562
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": [
+            548,
+            549
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "sampler",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "drop_model",
+          "type": "BOOLEAN",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SKTBModelBus"
+      },
+      "widgets_values": [
+        0,
+        0,
+        "25dreal_v10.safetensors",
+        "euler",
+        "normal",
+        false
+      ]
+    },
+    {
+      "id": 30,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -430,
+        80
+      ],
+      "size": {
+        "0": 210,
+        "1": 50
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 548
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 560,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            566
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "woman walking through park wearing colorful mad-clfcrcle bikini, light smile, dynamic pose, cinematic shot, great lighting<lora:Colorful_Circles_SDXL_v2:0.8> mad-clfcrcle, raw photo, film grain, Fujifilm XT3, (photorealistic, realistic:1.2), deep shadow,  8k, uhd, dslr, ultra high res"
+      ]
+    },
+    {
+      "id": 31,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -430,
+        190
+      ],
+      "size": {
+        "0": 210,
+        "1": 50
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 549
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 561,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            567
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 218,
+      "type": "SKTBModelBus",
+      "pos": [
+        -140,
+        -110
+      ],
+      "size": [
+        320,
+        400
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model_bus",
+          "type": "MODEL_BUS",
+          "link": 562
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": null
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "height"
+          }
+        },
+        {
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "ckpt_name"
+          }
+        },
+        {
+          "name": "sampler",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "sampler"
+          }
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "scheduler"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_bus",
+          "type": "MODEL_BUS",
+          "links": [
+            580
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            563
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            564
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "sampler",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "drop_model",
+          "type": "BOOLEAN",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SKTBModelBus"
+      },
+      "widgets_values": [
+        0,
+        0,
+        "25dreal_v10.safetensors",
+        "euler",
+        "normal",
+        false
+      ]
+    },
+    {
+      "id": 221,
+      "type": "SKTBModelBus",
+      "pos": [
+        280,
+        -110
+      ],
+      "size": [
+        320,
+        400
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model_bus",
+          "type": "MODEL_BUS",
+          "link": 580
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 581
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "height"
+          }
+        },
+        {
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "ckpt_name"
+          }
+        },
+        {
+          "name": "sampler",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "sampler"
+          }
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "scheduler"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_bus",
+          "type": "MODEL_BUS",
+          "links": [
+            585
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": [
+            583
+          ],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            582
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "sampler",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "drop_model",
+          "type": "BOOLEAN",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SKTBModelBus"
+      },
+      "widgets_values": [
+        0,
+        0,
+        "25dreal_v10.safetensors",
+        "euler",
+        "normal",
+        false
+      ]
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        580,
+        70
+      ],
+      "size": {
+        "0": 210,
+        "1": 50
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 582
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 583,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            513,
+            586
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 219,
+      "type": "SKTBPromptBus",
+      "pos": [
+        -140,
+        -50
+      ],
+      "size": [
+        540,
+        490
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt_bus",
+          "type": "PROMPT_BUS",
+          "link": 565
+        },
+        {
+          "name": "positive_conditioning",
+          "type": "CONDITIONING",
+          "link": 566
+        },
+        {
+          "name": "negative_conditioning",
+          "type": "CONDITIONING",
+          "link": 567
+        },
+        {
+          "name": "positive_prompt",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "positive_prompt"
+          }
+        },
+        {
+          "name": "negative_prompt",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "negative_prompt"
+          }
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "steps"
+          }
+        },
+        {
+          "name": "step_refiner",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "step_refiner"
+          }
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "link": null,
+          "widget": {
+            "name": "cfg"
+          }
+        },
+        {
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "ckpt_name"
+          }
+        },
+        {
+          "name": "sampler",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "sampler"
+          }
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "scheduler"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt_bus",
+          "type": "PROMPT_BUS",
+          "links": [
+            591
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "positive_conditioning",
+          "type": "CONDITIONING",
+          "links": [
+            568
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "negative_conditioning",
+          "type": "CONDITIONING",
+          "links": [
+            569
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "positive_prompt",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "negative_prompt",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            570
+          ],
+          "shape": 3,
+          "slot_index": 5
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "links": [
+            571
+          ],
+          "shape": 3,
+          "slot_index": 6
+        },
+        {
+          "name": "step_refiner",
+          "type": "INT",
+          "links": [
+            572
+          ],
+          "shape": 3,
+          "slot_index": 7
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "links": [
+            573
+          ],
+          "shape": 3,
+          "slot_index": 8
+        },
+        {
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "sampler",
+          "type": "COMBO",
+          "links": [
+            574
+          ],
+          "shape": 3,
+          "slot_index": 10
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "links": [
+            575
+          ],
+          "shape": 3,
+          "slot_index": 11
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SKTBPromptBus"
+      },
+      "widgets_values": [
+        "",
+        "",
+        800,
+        "randomize",
+        0,
+        0,
+        0,
+        "25dreal_v10.safetensors",
+        "euler",
+        "normal"
+      ]
+    },
+    {
+      "id": 223,
+      "type": "SKTBPromptBus",
+      "pos": [
+        850,
+        -50
+      ],
+      "size": [
+        540,
+        490
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt_bus",
+          "type": "PROMPT_BUS",
+          "link": 591
+        },
+        {
+          "name": "positive_conditioning",
+          "type": "CONDITIONING",
+          "link": null
+        },
+        {
+          "name": "negative_conditioning",
+          "type": "CONDITIONING",
+          "link": null
+        },
+        {
+          "name": "positive_prompt",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "positive_prompt"
+          }
+        },
+        {
+          "name": "negative_prompt",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "negative_prompt"
+          }
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "steps"
+          }
+        },
+        {
+          "name": "step_refiner",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "step_refiner"
+          }
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "link": null,
+          "widget": {
+            "name": "cfg"
+          }
+        },
+        {
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "ckpt_name"
+          }
+        },
+        {
+          "name": "sampler",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "sampler"
+          }
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "scheduler"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt_bus",
+          "type": "PROMPT_BUS",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "positive_conditioning",
+          "type": "CONDITIONING",
+          "links": [
+            592
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "negative_conditioning",
+          "type": "CONDITIONING",
+          "links": [
+            593
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "positive_prompt",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "negative_prompt",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "step_refiner",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "sampler",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SKTBPromptBus"
+      },
+      "widgets_values": [
+        "",
+        "",
+        659,
+        "randomize",
+        0,
+        0,
+        0,
+        "25dreal_v10.safetensors",
+        "euler",
+        "normal"
+      ]
+    },
+    {
+      "id": 222,
+      "type": "SKTBModelBus",
+      "pos": [
+        850,
+        -110
+      ],
+      "size": [
+        320,
+        400
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model_bus",
+          "type": "MODEL_BUS",
+          "link": 585
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": null
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 586
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "height"
+          }
+        },
+        {
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "ckpt_name"
+          }
+        },
+        {
+          "name": "sampler",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "sampler"
+          }
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "scheduler"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_bus",
+          "type": "MODEL_BUS",
+          "links": [
+            595
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            587
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": [
+            589
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": [
+            590
+          ],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            588
+          ],
+          "shape": 3,
+          "slot_index": 7
+        },
+        {
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "sampler",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "drop_model",
+          "type": "BOOLEAN",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SKTBModelBus"
+      },
+      "widgets_values": [
+        0,
+        0,
+        "25dreal_v10.safetensors",
+        "euler",
+        "normal",
+        false
+      ]
+    },
+    {
+      "id": 87,
+      "type": "FaceDetailer",
+      "pos": [
+        1260,
+        110
+      ],
+      "size": {
+        "0": 350,
+        "1": 900
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 588
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 587
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 589
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 590
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 592
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 593
+        },
+        {
+          "name": "bbox_detector",
+          "type": "BBOX_DETECTOR",
+          "link": 181
+        },
+        {
+          "name": "sam_model_opt",
+          "type": "SAM_MODEL",
+          "link": null
+        },
+        {
+          "name": "segm_detector_opt",
+          "type": "SEGM_DETECTOR",
+          "link": null
+        },
+        {
+          "name": "detailer_hook",
+          "type": "DETAILER_HOOK",
+          "link": null
+        },
+        {
+          "name": "scheduler_func_opt",
+          "type": "SCHEDULER_FUNC",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            528,
+            596
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "cropped_refined",
+          "type": "IMAGE",
+          "links": [
+            527
+          ],
+          "slot_index": 1,
+          "shape": 6
+        },
+        {
+          "name": "cropped_enhanced_alpha",
+          "type": "IMAGE",
+          "links": [
+            383,
+            526
+          ],
+          "slot_index": 2,
+          "shape": 6
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "detailer_pipe",
+          "type": "DETAILER_PIPE",
+          "links": null,
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "cnet_images",
+          "type": "IMAGE",
+          "links": [
+            525
+          ],
+          "slot_index": 5,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FaceDetailer"
+      },
+      "widgets_values": [
+        512,
+        true,
+        1024,
+        658413740528438,
+        "randomize",
+        20,
+        8,
+        "euler_ancestral",
+        "karras",
+        0.5,
+        5,
+        true,
+        true,
+        0.5,
+        10,
+        3,
+        "center-1",
+        0,
+        0.93,
+        0,
+        0.7,
+        "False",
+        10,
+        "",
+        1,
+        false,
+        20
+      ]
+    },
+    {
+      "id": 81,
+      "type": "ImageUpscaleWithModel",
+      "pos": [
+        1910,
+        240
+      ],
+      "size": {
+        "0": 240,
+        "1": 50
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 532
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 598
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            600
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageUpscaleWithModel"
+      }
+    },
+    {
+      "id": 224,
+      "type": "SKTBModelBus",
+      "pos": [
+        1630,
+        -110
+      ],
+      "size": [
+        320,
+        400
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model_bus",
+          "type": "MODEL_BUS",
+          "link": 595
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": null
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 596
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "height"
+          }
+        },
+        {
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "ckpt_name"
+          }
+        },
+        {
+          "name": "sampler",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "sampler"
+          }
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "scheduler"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_bus",
+          "type": "MODEL_BUS",
+          "links": [
+            599
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            598
+          ],
+          "shape": 3,
+          "slot_index": 7
+        },
+        {
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "sampler",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "drop_model",
+          "type": "BOOLEAN",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SKTBModelBus"
+      },
+      "widgets_values": [
+        0,
+        0,
+        "25dreal_v10.safetensors",
+        "euler",
+        "normal",
+        false
+      ]
+    },
+    {
+      "id": 225,
+      "type": "SKTBModelBus",
+      "pos": [
+        2280,
+        -110
+      ],
+      "size": [
+        320,
+        400
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model_bus",
+          "type": "MODEL_BUS",
+          "link": 599
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": null
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 600
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "height"
+          }
+        },
+        {
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "ckpt_name"
+          }
+        },
+        {
+          "name": "sampler",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "sampler"
+          }
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "scheduler"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_bus",
+          "type": "MODEL_BUS",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            601
+          ],
+          "shape": 3,
+          "slot_index": 7
+        },
+        {
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "sampler",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "drop_model",
+          "type": "BOOLEAN",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SKTBModelBus"
+      },
+      "widgets_values": [
+        0,
+        0,
+        "25dreal_v10.safetensors",
+        "euler",
+        "normal",
+        false
+      ]
+    },
+    {
+      "id": 215,
+      "type": "Note",
+      "pos": [
+        -1750,
+        40
+      ],
+      "size": {
+        "0": 320,
+        "1": 70
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Uses nodes from:\nhttps://github.com/sktb/sktb-comfy-nodes"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 65,
+      "type": "Power Lora Loader (rgthree)",
+      "pos": {
+        "0": -1030,
+        "1": -60,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 330,
+        "1": 260
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 468,
+          "dir": 3
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 469,
+          "dir": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            546
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "dir": 4
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            547
+          ],
+          "slot_index": 1,
+          "shape": 3,
+          "dir": 4
+        }
+      ],
+      "properties": {
+        "Show Strengths": "Single Strength",
+        "Node name for S&R": "Power Lora Loader (rgthree)"
+      },
+      "widgets_values": [
+        null,
+        {
+          "type": "PowerLoraLoaderHeaderWidget"
+        },
+        {
+          "on": true,
+          "lora": "Goth_girl_XL-v2.safetensors",
+          "strength": 0.6,
+          "strengthTwo": null
+        },
+        null,
+        ""
+      ]
+    },
+    {
+      "id": 217,
+      "type": "SKTBPromptBus",
+      "pos": [
+        -760,
+        -50
+      ],
+      "size": [
+        540,
+        490
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt_bus",
+          "type": "PROMPT_BUS",
+          "link": null
+        },
+        {
+          "name": "positive_conditioning",
+          "type": "CONDITIONING",
+          "link": null
+        },
+        {
+          "name": "negative_conditioning",
+          "type": "CONDITIONING",
+          "link": null
+        },
+        {
+          "name": "positive_prompt",
+          "type": "STRING",
+          "link": 552,
+          "widget": {
+            "name": "positive_prompt"
+          }
+        },
+        {
+          "name": "negative_prompt",
+          "type": "STRING",
+          "link": 553,
+          "widget": {
+            "name": "negative_prompt"
+          }
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 559,
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": 554,
+          "widget": {
+            "name": "steps"
+          }
+        },
+        {
+          "name": "step_refiner",
+          "type": "INT",
+          "link": 555,
+          "widget": {
+            "name": "step_refiner"
+          }
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "link": 556,
+          "widget": {
+            "name": "cfg"
+          }
+        },
+        {
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "ckpt_name"
+          }
+        },
+        {
+          "name": "sampler",
+          "type": "COMBO",
+          "link": 557,
+          "widget": {
+            "name": "sampler"
+          }
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": 558,
+          "widget": {
+            "name": "scheduler"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt_bus",
+          "type": "PROMPT_BUS",
+          "links": [
+            565
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "positive_conditioning",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "negative_conditioning",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "positive_prompt",
+          "type": "STRING",
+          "links": [
+            560
+          ],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "negative_prompt",
+          "type": "STRING",
+          "links": [
+            561
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "step_refiner",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "sampler",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SKTBPromptBus"
+      },
+      "widgets_values": [
+        "",
+        "",
+        1959,
+        "randomize",
+        0,
+        0,
+        0,
+        "25dreal_v10.safetensors",
+        "euler",
+        "normal"
+      ]
+    },
+    {
+      "id": 40,
+      "type": "KSamplerAdvanced",
+      "pos": [
+        60,
+        100
+      ],
+      "size": {
+        "0": 320,
+        "1": 500
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 563
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 568
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 569
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 564
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": 571,
+          "widget": {
+            "name": "steps"
+          }
+        },
+        {
+          "name": "end_at_step",
+          "type": "INT",
+          "link": 572,
+          "widget": {
+            "name": "end_at_step"
+          }
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "link": 573,
+          "slot_index": 6,
+          "widget": {
+            "name": "cfg"
+          }
+        },
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "link": 570,
+          "widget": {
+            "name": "noise_seed"
+          }
+        },
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "link": 574,
+          "widget": {
+            "name": "sampler_name"
+          }
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": 575,
+          "widget": {
+            "name": "scheduler"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            581
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerAdvanced"
+      },
+      "widgets_values": [
+        "disable",
+        647983084446525,
+        "fixed",
+        40,
+        7,
+        "dpmpp_2m",
+        "karras",
+        0,
+        10000,
+        "enable"
+      ]
+    },
+    {
+      "id": 196,
+      "type": "SKTBWorkflowInit",
+      "pos": [
+        -1380,
+        -140
+      ],
+      "size": {
+        "0": 280,
+        "1": 290
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image_width",
+          "type": "INT",
+          "link": 480,
+          "widget": {
+            "name": "image_width"
+          }
+        },
+        {
+          "name": "image_height",
+          "type": "INT",
+          "link": 481,
+          "widget": {
+            "name": "image_height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_bus",
+          "type": "MODEL_BUS",
+          "links": [
+            551
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            468
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": [
+            469
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "empty_latent",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "clip_last_layer",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "checkpoint_name",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "checkpoint_path",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "image_width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "image_height",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SKTBWorkflowInit"
+      },
+      "widgets_values": [
+        "juggernautXL_v8Rundiffusion.safetensors",
+        -2,
+        512,
+        512,
+        1
+      ]
+    },
+    {
+      "id": 70,
+      "type": "SDXLAspectRatioSelector",
+      "pos": [
+        -1710,
+        -130
+      ],
+      "size": {
+        "0": 230,
+        "1": 100
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "ratio",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            480
+          ],
+          "slot_index": 1,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            481
+          ],
+          "slot_index": 2,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SDXLAspectRatioSelector"
+      },
+      "widgets_values": [
+        "1:1"
+      ]
+    }
+  ],
+  "links": [
+    [
+      181,
+      89,
+      0,
+      87,
+      6,
+      "BBOX_DETECTOR"
+    ],
+    [
+      383,
+      87,
+      2,
+      183,
+      0,
+      "IMAGE"
+    ],
+    [
+      468,
+      196,
+      1,
+      65,
+      0,
+      "MODEL"
+    ],
+    [
+      469,
+      196,
+      2,
+      65,
+      1,
+      "CLIP"
+    ],
+    [
+      480,
+      70,
+      1,
+      196,
+      0,
+      "INT"
+    ],
+    [
+      481,
+      70,
+      2,
+      196,
+      1,
+      "INT"
+    ],
+    [
+      513,
+      8,
+      0,
+      204,
+      0,
+      "IMAGE"
+    ],
+    [
+      525,
+      87,
+      5,
+      211,
+      2,
+      "IMAGE"
+    ],
+    [
+      526,
+      87,
+      2,
+      211,
+      1,
+      "IMAGE"
+    ],
+    [
+      527,
+      87,
+      1,
+      211,
+      0,
+      "IMAGE"
+    ],
+    [
+      528,
+      87,
+      0,
+      211,
+      3,
+      "IMAGE"
+    ],
+    [
+      529,
+      211,
+      0,
+      212,
+      0,
+      "IMAGE"
+    ],
+    [
+      532,
+      80,
+      0,
+      81,
+      0,
+      "UPSCALE_MODEL"
+    ],
+    [
+      546,
+      65,
+      0,
+      216,
+      1,
+      "MODEL"
+    ],
+    [
+      547,
+      65,
+      1,
+      216,
+      2,
+      "CLIP"
+    ],
+    [
+      548,
+      216,
+      2,
+      30,
+      0,
+      "CLIP"
+    ],
+    [
+      549,
+      216,
+      2,
+      31,
+      0,
+      "CLIP"
+    ],
+    [
+      551,
+      196,
+      0,
+      216,
+      0,
+      "MODEL_BUS"
+    ],
+    [
+      552,
+      115,
+      0,
+      217,
+      3,
+      "STRING"
+    ],
+    [
+      553,
+      116,
+      0,
+      217,
+      4,
+      "STRING"
+    ],
+    [
+      554,
+      129,
+      0,
+      217,
+      6,
+      "INT"
+    ],
+    [
+      555,
+      129,
+      1,
+      217,
+      7,
+      "INT"
+    ],
+    [
+      556,
+      129,
+      2,
+      217,
+      8,
+      "FLOAT"
+    ],
+    [
+      557,
+      129,
+      3,
+      217,
+      10,
+      "COMBO"
+    ],
+    [
+      558,
+      129,
+      4,
+      217,
+      11,
+      "COMBO"
+    ],
+    [
+      559,
+      106,
+      0,
+      217,
+      5,
+      "INT"
+    ],
+    [
+      560,
+      217,
+      3,
+      30,
+      1,
+      "STRING"
+    ],
+    [
+      561,
+      217,
+      4,
+      31,
+      1,
+      "STRING"
+    ],
+    [
+      562,
+      216,
+      0,
+      218,
+      0,
+      "MODEL_BUS"
+    ],
+    [
+      563,
+      218,
+      1,
+      40,
+      0,
+      "MODEL"
+    ],
+    [
+      564,
+      218,
+      4,
+      40,
+      3,
+      "LATENT"
+    ],
+    [
+      565,
+      217,
+      0,
+      219,
+      0,
+      "PROMPT_BUS"
+    ],
+    [
+      566,
+      30,
+      0,
+      219,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      567,
+      31,
+      0,
+      219,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      568,
+      219,
+      1,
+      40,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      569,
+      219,
+      2,
+      40,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      570,
+      219,
+      5,
+      40,
+      7,
+      "INT"
+    ],
+    [
+      571,
+      219,
+      6,
+      40,
+      4,
+      "INT"
+    ],
+    [
+      572,
+      219,
+      7,
+      40,
+      5,
+      "INT"
+    ],
+    [
+      573,
+      219,
+      8,
+      40,
+      6,
+      "FLOAT"
+    ],
+    [
+      574,
+      219,
+      10,
+      40,
+      8,
+      "COMBO"
+    ],
+    [
+      575,
+      219,
+      11,
+      40,
+      9,
+      "COMBO"
+    ],
+    [
+      580,
+      218,
+      0,
+      221,
+      0,
+      "MODEL_BUS"
+    ],
+    [
+      581,
+      40,
+      0,
+      221,
+      4,
+      "LATENT"
+    ],
+    [
+      582,
+      221,
+      4,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      583,
+      221,
+      3,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      585,
+      221,
+      0,
+      222,
+      0,
+      "MODEL_BUS"
+    ],
+    [
+      586,
+      8,
+      0,
+      222,
+      5,
+      "IMAGE"
+    ],
+    [
+      587,
+      222,
+      1,
+      87,
+      1,
+      "MODEL"
+    ],
+    [
+      588,
+      222,
+      7,
+      87,
+      0,
+      "IMAGE"
+    ],
+    [
+      589,
+      222,
+      2,
+      87,
+      2,
+      "CLIP"
+    ],
+    [
+      590,
+      222,
+      3,
+      87,
+      3,
+      "VAE"
+    ],
+    [
+      591,
+      219,
+      0,
+      223,
+      0,
+      "PROMPT_BUS"
+    ],
+    [
+      592,
+      223,
+      1,
+      87,
+      4,
+      "CONDITIONING"
+    ],
+    [
+      593,
+      223,
+      2,
+      87,
+      5,
+      "CONDITIONING"
+    ],
+    [
+      595,
+      222,
+      0,
+      224,
+      0,
+      "MODEL_BUS"
+    ],
+    [
+      596,
+      87,
+      0,
+      224,
+      5,
+      "IMAGE"
+    ],
+    [
+      598,
+      224,
+      7,
+      81,
+      1,
+      "IMAGE"
+    ],
+    [
+      599,
+      224,
+      0,
+      225,
+      0,
+      "MODEL_BUS"
+    ],
+    [
+      600,
+      81,
+      0,
+      225,
+      5,
+      "IMAGE"
+    ],
+    [
+      601,
+      225,
+      7,
+      93,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Upscale",
+      "bounding": [
+        1870,
+        90,
+        320,
+        230
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "FaceDetailer",
+      "bounding": [
+        920,
+        10,
+        700,
+        600
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.38554328942953164,
+      "offset": [
+        2053.148559284242,
+        1279.3583639239448
+      ]
+    }
+  },
+  "version": 0.4
+}

@@ -1,5 +1,7 @@
 **sktb-comfy-nodes** is a set of ComfyUI Custom Nodes that I have developed 
-to resolve certain issues in my own workflows
+to resolve certain issues in my own workflows. Mainly they're about tidying
+up the way it looks (as I'm a bit OCD)
+
 Copyright (C) 2024 Simon Burrows
 
 This program is free software: you can redistribute it and/or modify
