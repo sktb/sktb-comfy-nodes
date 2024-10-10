@@ -6,6 +6,7 @@ CATEGORY = "SKTB"
 
 OPTIONAL_INPUTS = {
                 "model_bus": ("MODEL_BUS", { "defaultInput": True, "forceInput": True}),
+                "prompt_bus": ("PROMPT_BUS", { "defaultInput": True, "forceInput": True}),
                 "model": ("MODEL", { "defaultInput": True, "forceInput": True}),
                 "clip": ("CLIP", { "defaultInput": True, "forceInput": True}),
                 "vae": ("VAE", { "defaultInput": True, "forceInput": True}),
@@ -42,8 +43,10 @@ class SKTBModelBus:
         model_bus = param_dictionary["model_bus"] if "model_bus" in param_dictionary else {}
         new_model_bus = {}
 
+        prompt_bus = param_dictionary["prompt_bus"] if "prompt_bus" in param_dictionary else {}
+
         for param_name in OPTIONAL_INPUTS:
-            if param_name == "model_bus":
+            if param_name == "prompt_bus" or param_name == "model_bus":
                 continue
             value = param_dictionary[param_name] if param_name in param_dictionary else None
             drop_value = param_dictionary["drop_" + param_name] if "drop_" + param_name in param_dictionary else False
@@ -51,11 +54,15 @@ class SKTBModelBus:
 
         result = [
             new_model_bus,
+            prompt_bus,
         ]
 
         for param_name in OPTIONAL_INPUTS.keys():
-            if param_name == "model_bus":
+            if param_name == "prompt_bus" or param_name == "model_bus":
                 continue
             result.append(new_model_bus[param_name] if param_name in new_model_bus else None)
+
+        print("Model Bus")
+        print(result)
 
         return result
